@@ -12,6 +12,7 @@ Group:          Development/Perl
 URL:            http://search.cpan.org/dist/%{module}
 Source:         http://www.cpan.org/modules/by-module/Devel/%{module}-%{version}.tar.bz2
 BuildRequires:  perl(Module::Build)
+BuildRequires:  perl(PadWalker)
 BuildRequires:  perl-devel
 Buildroot:      %{_tmppath}/%{name}-%{version}
 
