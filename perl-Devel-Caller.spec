@@ -14,6 +14,7 @@ Source:         http://www.cpan.org/modules/by-module/Devel/%{module}-%{version}
 BuildRequires:  perl(Module::Build)
 BuildRequires:  perl(PadWalker)
 BuildRequires:  perl-devel
+Buildroot:      %{_tmppath}/%{name}-%{version}
 
 %description
 This module provides various improvements over the built-in caller()
