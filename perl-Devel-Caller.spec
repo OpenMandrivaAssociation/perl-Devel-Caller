@@ -1,7 +1,7 @@
 %define module  Devel-Caller
 %define name    perl-%{module}
-%define version 0.11
-%define release %mkrel 2
+%define version 2.01
+%define release %mkrel 1
 
 Name:           %{name}
 Version:        %{version}
@@ -11,7 +11,6 @@ License:        Artistic/GPL
 Group:          Development/Perl
 URL:            http://search.cpan.org/dist/%{module}
 Source:         http://www.cpan.org/modules/by-module/Devel/%{module}-%{version}.tar.bz2
-BuildRequires:  perl(Module::Build)
 BuildRequires:  perl(PadWalker)
 BuildRequires:  perl-devel
 Buildroot:      %{_tmppath}/%{name}-%{version}
@@ -24,21 +23,22 @@ primitive.
 %setup -q -n %{module}-%{version}
 
 %build
-%{__perl} Build.PL installdirs=vendor
-./Build CFLAGS="%{optflags}"
+%{__perl} Makefile.PL INSTALLDIRS=vendor
+%make CFLAGS="%{optflags}"
+
 %check
-./Build test
+%__make test
 
 %install
 rm -rf %{buildroot}
-./Build install destdir=%{buildroot}
+%makeinstall_std
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc README
+%doc Changes
 %{_mandir}/*/*
 %{perl_vendorarch}/Devel
 %{perl_vendorarch}/auto/Devel
