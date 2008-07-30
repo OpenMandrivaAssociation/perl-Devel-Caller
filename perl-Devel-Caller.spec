@@ -1,7 +1,7 @@
 %define module  Devel-Caller
 %define name    perl-%{module}
 %define version 2.03
-%define release %mkrel 1
+%define release %mkrel 3
 
 Name:           %{name}
 Version:        %{version}
