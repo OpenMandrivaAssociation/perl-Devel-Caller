@@ -1,26 +1,26 @@
-%define module  Devel-Caller
-%define name    perl-%{module}
-%define version 2.03
-%define release %mkrel 3
+%define upstream_name    Devel-Caller
+%define upstream_version 2.03
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Meatier versions of caller()
-License:        Artistic/GPL
-Group:          Development/Perl
-URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Devel/%{module}-%{version}.tar.bz2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Meatier versions of caller()
+License:    Artistic/GPL
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:  perl(PadWalker)
 BuildRequires:  perl-devel
-Buildroot:      %{_tmppath}/%{name}-%{version}
+Buildroot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides various improvements over the built-in caller()
 primitive.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -42,4 +42,3 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 %{perl_vendorarch}/Devel
 %{perl_vendorarch}/auto/Devel
-
