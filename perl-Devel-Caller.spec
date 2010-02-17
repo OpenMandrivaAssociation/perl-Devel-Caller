@@ -1,5 +1,5 @@
 %define upstream_name    Devel-Caller
-%define upstream_version 2.03
+%define upstream_version 2.04
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -9,10 +9,11 @@ Summary:    Meatier versions of caller()
 License:    Artistic/GPL
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:    http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:  perl(PadWalker)
 BuildRequires:  perl-devel
+
 Buildroot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
@@ -27,7 +28,7 @@ primitive.
 %make CFLAGS="%{optflags}"
 
 %check
-%__make test
+%make test
 
 %install
 rm -rf %{buildroot}
