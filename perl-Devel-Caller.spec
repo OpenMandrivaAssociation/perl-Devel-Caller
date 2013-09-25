@@ -1,15 +1,15 @@
 %define upstream_name    Devel-Caller
-%define upstream_version 2.05
+%define upstream_version 2.06
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:	5
+Release:	1
 
 Summary:    Meatier versions of caller()
 License:    Artistic/GPL
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/Devel/Devel-Caller-%{upstream_version}.tar.gz
 
 BuildRequires:  perl(PadWalker)
 BuildRequires:  perl-devel
@@ -111,9 +111,10 @@ rm -rf %{buildroot}
 - fix directory ownership
 - Module::Build-based build
 
-* Sat Mar 25 2006 Nicolas Lécureuil <neoclust@mandriva.org> 0.09-2mdk
+* Sat Mar 25 2006 Nicolas LÃ©cureuil <neoclust@mandriva.org> 0.09-2mdk
 - Add BuildRequires
 
 * Fri Mar 24 2006 Rafael Garcia-Suarez <rgarciasuarez@mandriva.com> 0.09-1mdk
 - First Mandriva release
+
 
