@@ -1,15 +1,15 @@
 %define upstream_name    Devel-Caller
-%define upstream_version 2.06
+%define upstream_version 2.07
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:	3
+Version:    %{upstream_version}
+Release:	1
 
 Summary:    Meatier versions of caller()
 License:    Artistic/GPL
 Group:      Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Devel/Devel-Caller-%{upstream_version}.tar.gz
+Url:        https://github.com/richardc/perl-devel-caller
+Source0:    https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Devel-Caller-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:  perl(PadWalker)
