@@ -1,15 +1,13 @@
 %define upstream_name    Devel-Caller
-%define upstream_version 2.07
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:	1
+Version:    2.07
+Release:	2
 
 Summary:    Meatier versions of caller()
 License:    Artistic/GPL
 Group:      Development/Perl
 Url:        https://github.com/richardc/perl-devel-caller
-Source0:    https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Devel-Caller-%{upstream_version}.tar.gz
+Source0:    https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Devel-Caller-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:  perl(PadWalker)
@@ -22,7 +20,7 @@ This module provides various improvements over the built-in caller()
 primitive.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -73,9 +71,7 @@ rm -rf %{buildroot}
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 2.30.0-1mdv2010.0
 + Revision: 406979
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 2.03-3mdv2009.0
+- rebuild using %2.07 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 2.03-3mdv2009.0
 + Revision: 256616
 - rebuild
 
